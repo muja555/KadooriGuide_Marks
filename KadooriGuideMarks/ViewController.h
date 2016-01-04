@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
+#import "ViewMarks.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
+{
+    Reachability *internetReachableFoo;
+}
 
+@property (strong, nonatomic) IBOutlet UIImageView *btnInfo;
+@property (strong, nonatomic) IBOutlet UITextField *txtNum;
+@property (strong, nonatomic) IBOutlet UITextField *txtPass;
+@property (strong, nonatomic) IBOutlet UIButton *btnEnter;
+
+
++(void) showMessage:(NSString *)message;
 
 @end
 

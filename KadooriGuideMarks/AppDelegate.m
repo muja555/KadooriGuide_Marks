@@ -17,7 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+     NSSetUncaughtExceptionHandler(&exceptionHandler);
+    
     return YES;
+}
+
+void exceptionHandler(NSException *exception)
+{
+    NSLog(@"%@",[exception name]);
+    NSLog(@"%@",[exception reason]);
+    NSLog(@"%@",[exception userInfo]);
+    NSLog(@"%@",[exception callStackSymbols]);
+    NSLog(@"%@",[exception callStackReturnAddresses]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
